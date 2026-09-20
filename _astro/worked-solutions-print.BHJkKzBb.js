@@ -1,0 +1,1 @@
+var e;window.addEventListener(`beforeprint`,()=>{if(!(e||document.querySelector(`.math-guide[data-print-scope]`))){e=new Map(Array.from(document.querySelectorAll(`.st-worked-solution`),e=>[e,e.open]));for(let t of e.keys())t.open=!0}}),window.addEventListener(`afterprint`,()=>{for(let[t,n]of e??[])t.open=n;e=void 0});

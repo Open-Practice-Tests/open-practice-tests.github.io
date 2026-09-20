@@ -1,0 +1,1 @@
+import"./practice-item.S4hnk25Z.js";
