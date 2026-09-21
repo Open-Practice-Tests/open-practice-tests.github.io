@@ -7,7 +7,12 @@
         if (t !== "soft" && t !== "light" && t !== "dark") t = "soft";
         document.documentElement.setAttribute("data-theme", t);
       })();
-    </script><link rel="stylesheet" href="/_astro/BaseLayout.LXuwkRfZ.css"></head><body class="resource-shell"><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><div class="site-navigation" id="site-navigation"><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">Practice<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/tests/">Practice tests</a></li><li><a href="/sat/english/#diagnostics">English diagnostics</a></li></ul></details></li><li class="nav-item"><details class="nav-menu"><summary class="nav-summary">Study guides<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/math/">Math study guides</a></li><li><a href="/sat/english/">Reading and Writing study guides</a></li></ul></details></li><li class="nav-item"><a class="nav-link" href="/my-practice/" aria-current="location">My practice</a></li></ul></nav><script>
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CdnK3dFC.css"></head><body class="resource-shell"><script>
+      // Set the initial phone layout before the header paints; no-JS keeps full navigation.
+      if (!document.body.classList.contains('test-shell')) {
+        document.body.toggleAttribute('data-nav-mobile', matchMedia('(max-width: 40rem)').matches);
+      }
+    </script><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><button type="button" class="test-menu-toggle nav-summary" aria-expanded="false" aria-controls="site-navigation">Menu</button><div class="site-navigation" id="site-navigation"><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/sat/tests/">Practice tests</a></li><li class="nav-item nav-study-desktop"><details class="nav-menu"><summary class="nav-summary">Study guides<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/math/">Math study guides</a></li><li><a href="/sat/english/">Reading and Writing study guides</a></li></ul></details></li><li class="nav-item nav-subject-mobile"><a class="nav-link" href="/sat/math/">Math</a></li><li class="nav-item nav-subject-mobile"><a class="nav-link" href="/sat/english/">Reading and Writing</a></li><li class="nav-item"><a class="nav-link" href="/my-practice/" aria-current="location">My practice</a></li></ul></nav><script>
   (function () {
     var nav = document.querySelector(".site-nav");
     if (!nav) return;
@@ -32,9 +37,10 @@
     document.addEventListener("keydown", function (e) {
       if (e.key !== "Escape") return;
       var open = menus.filter(function (m) {
-        return m.open;
+        return m.open && m.getClientRects().length;
       });
       if (!open.length) return;
+      e.preventDefault();
       var summary = open[0].querySelector("summary");
       closeAll(null);
       if (summary) summary.focus();
@@ -48,25 +54,6 @@
   })();
 </script><details class="appearance" hidden><summary class="nav-summary">Appearance</summary><div class="theme-switch" role="radiogroup" aria-label="Color theme" hidden><button type="button" class="theme-opt" data-theme-value="soft" role="radio" aria-checked="true" tabindex="0">Soft</button><button type="button" class="theme-opt" data-theme-value="light" role="radio" aria-checked="false" tabindex="-1">Light</button><button type="button" class="theme-opt" data-theme-value="dark" role="radio" aria-checked="false" tabindex="-1">Dark</button></div></details></div></header><main id="main-content" tabindex="-1" class="site-main"><h1>Completed test results</h1><p><a data-results-redirect href="/my-practice/" data-result-href="/sat/tests/rw-02/">Back to My practice</a></p><noscript><p>Enable JavaScript to load the selected result saved in this browser.</p></noscript><script type="module">var e=document.querySelector(`[data-results-redirect]`),t=new URLSearchParams(location.search).get(`attempt`),n=new URL(t?e.dataset.resultHref:e.href,location.href);t&&n.searchParams.set(`attempt`,t),location.replace(n.href);</script></main><footer class="site-footer"><nav class="footer-nav" aria-label="Footer"><a href="/how-to-use/">How to use</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><p>Free, open practice tests. Not affiliated with or endorsed by the College Board, ACT, or the MAA.</p></footer><script>
       (function () {
-        var menuToggle = document.querySelector('.test-menu-toggle');
-        var navigation = document.getElementById('site-navigation');
-        if (menuToggle && navigation) {
-          menuToggle.addEventListener('click', function () {
-            menuToggle.setAttribute('aria-expanded', menuToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-          });
-          document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
-              menuToggle.setAttribute('aria-expanded', 'false');
-              menuToggle.focus();
-            }
-          });
-          document.addEventListener('click', function (e) {
-            if (!navigation.contains(e.target) && !menuToggle.contains(e.target)) menuToggle.setAttribute('aria-expanded', 'false');
-          });
-          navigation.addEventListener('focusout', function (e) {
-            if (!navigation.contains(e.relatedTarget) && e.relatedTarget !== menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
-          });
-        }
         var group = document.querySelector(".theme-switch");
         if (!group) return;
         var opts = Array.prototype.slice.call(group.querySelectorAll(".theme-opt"));
@@ -122,6 +109,7 @@
           appearance.hidden = false;
           document.addEventListener("keydown", function (e) {
             if (e.key === "Escape" && appearance.open) {
+              e.preventDefault();
               appearance.open = false;
               appearance.querySelector("summary").focus();
             }
@@ -134,4 +122,4 @@
           });
         }
       })();
-    </script><script type="module">var e=`.st-content .math-display, .st-content .solution-math, .pr-source-explanation .math-display, .pr-source-explanation .solution-math`,t=e=>{e.clientWidth>0&&e.scrollWidth>e.clientWidth+1?(e.tabIndex=0,e.setAttribute(`role`,`region`),e.setAttribute(`aria-label`,`Equation, scroll horizontally`)):(e.removeAttribute(`tabindex`),e.removeAttribute(`role`),e.removeAttribute(`aria-label`))},n=new ResizeObserver(e=>e.forEach(e=>t(e.target)));document.querySelectorAll(e).forEach(e=>{n.observe(e),t(e)});var r=document.querySelector(`.english-guide`);if(r){let e=r.querySelector(`.guide-contents`);e?.addEventListener(`click`,t=>{t.target.closest(`a`)&&(e.open=!1)}),e?.addEventListener(`keydown`,t=>{t.key===`Escape`&&(e.open=!1,e.querySelector(`summary`)?.focus())});let t=[...r.querySelectorAll(`[data-guide-unit]`)];if(t.length){let e=`opt.guide-reading.v1:${location.pathname}`,n=document.createElement(`p`);n.className=`reading-resume`,r.querySelector(`h1`)?.after(n);try{let r=localStorage.getItem(e);if(r&&t.some(e=>e.id===r)&&!location.hash){let e=document.createElement(`a`);e.href=`#${r}`,e.textContent=`Continue where you left off`,n.append(e)}}catch{}let i=new IntersectionObserver(t=>{let n=t.filter(e=>e.isIntersecting).sort((e,t)=>e.boundingClientRect.top-t.boundingClientRect.top)[0];if(n)try{localStorage.setItem(e,n.target.id)}catch{}},{rootMargin:`-10% 0px -65% 0px`});t.forEach(e=>i.observe(e))}let n=[...r.querySelectorAll(`.table-scroll`)];for(let e of n){let t=document.createElement(`p`);t.className=`table-hint`,t.textContent=`Scroll sideways to read all columns. Focus the table and use the arrow keys.`,e.after(t);let n=()=>t.hidden=e.scrollWidth<=e.clientWidth+1;new ResizeObserver(n).observe(e),n()}}var i=document.querySelector(`.math-guide`);if(i){for(let e of i.querySelectorAll(`.lesson-contents,.reference-contents`))e.addEventListener(`click`,t=>{t.target.closest(`a`)&&(e.open=!1)}),e.addEventListener(`keydown`,t=>{t.key===`Escape`&&(e.open=!1,e.querySelector(`summary`)?.focus())});for(let e of i.querySelectorAll(`.table-scroll`)){let t=document.createElement(`p`);t.className=`math-table-hint`,t.textContent=`Scroll sideways for more columns. Focus the table and use the arrow keys.`,e.after(t);let n=()=>{t.hidden=e.scrollWidth<=e.clientWidth+1};new ResizeObserver(n).observe(e),n()}let e=0;for(let t of i.querySelectorAll(`svg.pilot-figure`)){let n=document.createElement(`button`);n.type=`button`,n.className=`pr-btn enlarge-figure`,n.textContent=`Enlarge diagram`,n.setAttribute(`aria-label`,`Enlarge diagram: ${t.getAttribute(`aria-label`)??`Math figure`}`),t.after(n),n.addEventListener(`click`,()=>{let r=document.createElement(`dialog`);r.className=`math-figure-dialog`,r.setAttribute(`aria-label`,`Enlarged Math diagram`);let i=document.createElement(`button`);i.type=`button`,i.className=`pr-btn`,i.textContent=`Close diagram`;let a=document.createElement(`p`);a.textContent=`Scroll to explore the diagram. Use the arrow keys while the diagram is focused.`;let o=document.createElement(`div`);o.className=`math-figure-view`,o.tabIndex=0,o.setAttribute(`role`,`region`),o.setAttribute(`aria-label`,`Scrollable enlarged diagram`);let s=t.cloneNode(!0),c=`enlarged-${++e}-`,l=new Map;s.querySelectorAll(`[id]`).forEach(e=>l.set(e.id,c+e.id));for(let e of[s,...s.querySelectorAll(`*`)])for(let t of[...e.attributes]){let n=t.value;if(t.name===`id`)n=l.get(n)??n;else{for(let[e,t]of l)n=n.replaceAll(`url(#${e})`,`url(#${t})`),n===`#${e}`&&(n=`#${t}`);[`aria-labelledby`,`aria-describedby`].includes(t.name)&&(n=n.split(` `).map(e=>l.get(e)??e).join(` `))}e.setAttribute(t.name,n)}let u=[...t.querySelectorAll(`text`)].map(e=>parseFloat(getComputedStyle(e).fontSize)).filter(e=>e>0),d=Math.max(1.25,16/Math.min(16,...u));s.style.width=`${Math.max(640,t.viewBox.baseVal.width*d)}px`,s.style.maxWidth=`none`,o.append(s),r.append(i,a,o),document.body.append(r),i.addEventListener(`click`,()=>r.close()),r.addEventListener(`close`,()=>{r.remove(),n.focus()}),r.showModal(),i.focus()})}}</script></body></html>
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.DRPCR6na.js"></script></body></html>
