@@ -1,0 +1,1 @@
+function e(e=`/`){let t=`/`.endsWith(`/`)?`/`.slice(0,-1):`/`,n=e.startsWith(`/`)?e:`/${e}`,r=n.search(/[?#]/),i=r===-1?n:n.slice(0,r),a=r===-1?``:n.slice(r);return`${t}${i.endsWith(`/`)?i:`${i}/`}${a}`||`/`}export{e as t};
