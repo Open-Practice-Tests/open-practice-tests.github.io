@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://open-practice-tests.github.io/sitemap.xml
+Sitemap: https://openpracticetests.org/sitemap.xml
