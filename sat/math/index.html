@@ -7,12 +7,40 @@
         if (t !== "soft" && t !== "light" && t !== "dark") t = "light";
         document.documentElement.setAttribute("data-theme", t);
       })();
-    </script><link rel="stylesheet" href="/_astro/BaseLayout.DpT987KA.css"><style>.guide-completion[hidden],.guide-completion-summary[hidden]{display:none!important}.guide-heading{flex-wrap:wrap;justify-content:space-between;align-items:start;gap:.5rem 1rem;margin:0 0 1.5rem;display:flex}.guide-heading>h1,.guide-heading>h3{overflow-wrap:break-word;flex:14rem;min-width:0;margin:0}.guide-completion{max-width:100%}.guide-completion-button{border:1px solid var(--color-muted);border-radius:var(--radius);min-width:44px;max-width:100%;min-height:44px;color:var(--color-text);font:inherit;cursor:pointer;background:0 0;justify-content:center;align-items:center;gap:.5rem;padding:.5rem .7rem;font-size:.875rem;display:inline-flex}.guide-completion-button:hover{background:var(--btn-bg)}.guide-completion-button:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}.guide-completion-icon{border:1px solid;border-radius:50%;flex:0 0 1.1em;justify-content:center;align-items:center;width:1.1em;height:1.1em;font-weight:700;display:inline-flex}[data-completion-state=true] .guide-completion-button{background:var(--btn-bg)}.site-main:has([data-completion-catalog])>h1,[data-completion-catalog] h2,.guide-completion-card{overflow-wrap:break-word}.guide-completion-card .guide-heading{margin:0}.guide-completion-note{max-width:22rem;color:var(--color-muted);font-size:.85rem;display:block}.guide-completion-summary{color:var(--color-muted);margin-block:.75rem;font-size:.9rem}@media print{.guide-completion,.guide-completion-summary{display:none!important}}
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.DatjIL8F.css"><style>.guide-completion[hidden],.guide-completion-summary[hidden]{display:none!important}.guide-heading{flex-wrap:wrap;justify-content:space-between;align-items:start;gap:.5rem 1rem;margin:0 0 1.5rem;display:flex}.guide-heading>h1,.guide-heading>h3{overflow-wrap:break-word;flex:14rem;min-width:0;margin:0}.guide-completion{max-width:100%}.guide-completion-button{border:1px solid var(--color-muted);border-radius:var(--radius);min-width:44px;max-width:100%;min-height:44px;color:var(--color-text);font:inherit;cursor:pointer;background:0 0;justify-content:center;align-items:center;gap:.5rem;padding:.5rem .7rem;font-size:.875rem;display:inline-flex}.guide-completion-button:hover{background:var(--btn-bg)}.guide-completion-button:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}.guide-completion-icon{border:1px solid;border-radius:50%;flex:0 0 1.1em;justify-content:center;align-items:center;width:1.1em;height:1.1em;font-weight:700;display:inline-flex}[data-completion-state=true] .guide-completion-button{background:var(--btn-bg)}.site-main:has([data-completion-catalog])>h1,[data-completion-catalog] h2,.guide-completion-card{overflow-wrap:break-word}.guide-completion-card .guide-heading{margin:0}.guide-completion-note{max-width:22rem;color:var(--color-muted);font-size:.85rem;display:block}.guide-completion-summary{color:var(--color-muted);margin-block:.75rem;font-size:.9rem}@media print{.guide-completion,.guide-completion-summary{display:none!important}}
 .crumbs[data-astro-cid-5zaktg5z] ol[data-astro-cid-5zaktg5z]{flex-wrap:wrap;align-items:baseline;gap:.4rem;min-width:0;max-width:100%;margin:0;padding:0;list-style:none;display:flex}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]{align-items:baseline;gap:.4rem;min-width:0;max-width:100%;display:flex}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]:last-child{overflow-wrap:anywhere}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]>span[data-astro-cid-5zaktg5z]{font-weight:400}@media (width<=40rem){.crumb-ancestor[data-astro-cid-5zaktg5z] a[data-astro-cid-5zaktg5z]{white-space:nowrap;text-overflow:ellipsis;max-width:14ch;overflow:hidden}.crumbs[data-astro-cid-5zaktg5z]{font-size:.9rem}}
 </style></head><body class="resource-shell math-resource"><script>
       // Set the initial phone layout before the header paints; no-JS keeps full navigation.
-      if (!document.body.classList.contains('test-shell')) {
-        document.body.toggleAttribute('data-nav-mobile', matchMedia('(max-width: 40rem)').matches);
+      document.body.toggleAttribute('data-nav-mobile', matchMedia('(max-width: 40rem)').matches);
+      if (document.body.dataset.clientPage) {
+        document.body.setAttribute('data-page-loading', '');
+        const showLoadingHelp = () => {
+          const help = document.querySelector('[data-loading-help]');
+          if (help) {
+            // Static HTML cannot know the selected attempt or the URL fragment.
+            help.querySelector('[data-loading-reload]').href = location.href;
+            help.hidden = false;
+          }
+        };
+        const failed = () => {
+          document.body.setAttribute('data-page-loading', '');
+          const message = document.querySelector('[data-loading-message]');
+          if (message) message.textContent = 'Practice could not be loaded.';
+          showLoadingHelp();
+        };
+        window.addEventListener('practice-startup-failed', failed);
+        // Only startup errors affect the shell, never an unrelated error during
+        // an active test. Do not reveal partially initialized controls on error.
+        window.addEventListener('error', () => {
+          if (document.body.hasAttribute('data-page-loading')) failed();
+        }, true);
+        window.addEventListener('unhandledrejection', () => {
+          if (document.body.hasAttribute('data-page-loading')) failed();
+        });
+        // A failed/delayed module must leave a usable explanation, not a blank page.
+        setTimeout(() => {
+          if (document.body.hasAttribute('data-page-loading')) showLoadingHelp();
+        }, 10000);
       }
     </script><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><a class="site-title" href="/"><svg class="site-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="opt-mark" x1="0" y1="0" x2="1" y2="1"><stop class="site-mark-a" offset="0"></stop><stop class="site-mark-b" offset="1"></stop></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#opt-mark)"></rect><path class="site-mark-check" d="M7 12.4 10.2 15.6 17 8.8" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="site-title-text">Open Practice Tests</span></a><button type="button" class="test-menu-toggle nav-summary" aria-expanded="false" aria-controls="site-navigation">Menu</button><div class="site-navigation" id="site-navigation"><nav class="site-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/sat/tests/">Practice tests</a></li><li class="nav-item nav-study-desktop is-section"><details class="nav-menu"><summary class="nav-summary">Study guides<svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><ul class="nav-panel"><li><a href="/sat/math/" aria-current="page">Math study guides</a></li><li><a href="/sat/english/">Reading and Writing study guides</a></li></ul></details></li><li class="nav-item nav-subject-mobile"><a class="nav-link" href="/sat/math/" aria-current="page">Math</a></li><li class="nav-item nav-subject-mobile"><a class="nav-link" href="/sat/english/">Reading and Writing</a></li><li class="nav-item"><a class="nav-link" href="/my-practice/">My practice</a></li></ul></nav><script>
   (function () {
@@ -127,7 +155,7 @@
           });
         }
       })();
-    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.C4UyG96H.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BeBZhmVR.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
   if (location.protocol === 'https:' && location.hostname === 'openpracticetests.org' && !document.querySelector('script[data-cf-beacon]')) {
     const beacon = document.createElement('script');
     beacon.type = 'module';
