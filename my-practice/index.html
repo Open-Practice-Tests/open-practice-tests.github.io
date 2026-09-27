@@ -6,8 +6,15 @@
         } catch (e) {}
         if (t !== "soft" && t !== "light" && t !== "dark") t = "light";
         document.documentElement.setAttribute("data-theme", t);
+        const chrome = document.querySelector('meta[name="theme-color"]');
+        const syncChrome = () => {
+          const theme = document.documentElement.getAttribute('data-theme');
+          chrome.content = theme === 'dark' ? '#0f1117' : theme === 'soft' ? '#f6f1e7' : '#ffffff';
+        };
+        syncChrome();
+        new MutationObserver(syncChrome).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
       })();
-    </script><link rel="stylesheet" href="/_astro/BaseLayout.DatjIL8F.css"><style>.crumbs[data-astro-cid-5zaktg5z] ol[data-astro-cid-5zaktg5z]{flex-wrap:wrap;align-items:baseline;gap:.4rem;min-width:0;max-width:100%;margin:0;padding:0;list-style:none;display:flex}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]{align-items:baseline;gap:.4rem;min-width:0;max-width:100%;display:flex}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]:last-child{overflow-wrap:anywhere}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]>span[data-astro-cid-5zaktg5z]{font-weight:400}@media (width<=40rem){.crumb-ancestor[data-astro-cid-5zaktg5z] a[data-astro-cid-5zaktg5z]{white-space:nowrap;text-overflow:ellipsis;max-width:14ch;overflow:hidden}.crumbs[data-astro-cid-5zaktg5z]{font-size:.9rem}}
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CrzhBEnk.css"><style>.crumbs[data-astro-cid-5zaktg5z] ol[data-astro-cid-5zaktg5z]{flex-wrap:wrap;align-items:baseline;gap:.4rem;min-width:0;max-width:100%;margin:0;padding:0;list-style:none;display:flex}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]{align-items:baseline;gap:.4rem;min-width:0;max-width:100%;display:flex}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]:last-child{overflow-wrap:anywhere}.crumbs[data-astro-cid-5zaktg5z] li[data-astro-cid-5zaktg5z]>span[data-astro-cid-5zaktg5z]{font-weight:400}@media (width<=40rem){.crumb-ancestor[data-astro-cid-5zaktg5z] a[data-astro-cid-5zaktg5z]{white-space:nowrap;text-overflow:ellipsis;max-width:14ch;overflow:hidden}.crumbs[data-astro-cid-5zaktg5z]{font-size:.9rem}}
 </style></head><body class="resource-shell" data-client-page="practice"><script>
       // Set the initial phone layout before the header paints; no-JS keeps full navigation.
       document.body.toggleAttribute('data-nav-mobile', matchMedia('(max-width: 40rem)').matches);
@@ -154,7 +161,7 @@
           });
         }
       })();
-    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BeBZhmVR.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.DcrdnMru.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
   if (location.protocol === 'https:' && location.hostname === 'openpracticetests.org' && !document.querySelector('script[data-cf-beacon]')) {
     const beacon = document.createElement('script');
     beacon.type = 'module';

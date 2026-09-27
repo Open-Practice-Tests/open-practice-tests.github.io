@@ -6,8 +6,15 @@
         } catch (e) {}
         if (t !== "soft" && t !== "light" && t !== "dark") t = "light";
         document.documentElement.setAttribute("data-theme", t);
+        const chrome = document.querySelector('meta[name="theme-color"]');
+        const syncChrome = () => {
+          const theme = document.documentElement.getAttribute('data-theme');
+          chrome.content = theme === 'dark' ? '#0f1117' : theme === 'soft' ? '#f6f1e7' : '#ffffff';
+        };
+        syncChrome();
+        new MutationObserver(syncChrome).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
       })();
-    </script><link rel="stylesheet" href="/_astro/BaseLayout.DatjIL8F.css"><style>.contact-email-row[data-astro-cid-kgarxjsa]{flex-wrap:wrap;align-items:center;gap:.25rem .5rem;display:flex}.contact-email-tools[data-astro-cid-kgarxjsa]{align-items:center;gap:.25rem;min-width:0;max-width:100%;display:inline-flex}.contact-email[data-astro-cid-kgarxjsa]{overflow-wrap:anywhere;min-width:0}.contact-copy[data-astro-cid-kgarxjsa]{width:44px;height:44px;color:var(--color-text);border-radius:var(--radius);cursor:pointer;background:0 0;border:0;flex:0 0 44px;justify-content:center;align-items:center;padding:.5rem;display:inline-flex}.contact-copy[data-astro-cid-kgarxjsa][hidden]{display:none}.contact-copy[data-astro-cid-kgarxjsa]:hover{background:var(--btn-bg)}.contact-copy[data-astro-cid-kgarxjsa][aria-disabled=true]{cursor:wait}.contact-status[data-astro-cid-kgarxjsa]{color:var(--color-muted);font-size:.9rem}.contact-status[data-astro-cid-kgarxjsa]:empty{margin:0}@media print{.contact-copy[data-astro-cid-kgarxjsa],.contact-status[data-astro-cid-kgarxjsa]{display:none}}
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.CrzhBEnk.css"><style>.contact-email-row[data-astro-cid-kgarxjsa]{flex-wrap:wrap;align-items:center;gap:.25rem .5rem;display:flex}.contact-email-tools[data-astro-cid-kgarxjsa]{align-items:center;gap:.25rem;min-width:0;max-width:100%;display:inline-flex}.contact-email[data-astro-cid-kgarxjsa]{overflow-wrap:anywhere;min-width:0}.contact-copy[data-astro-cid-kgarxjsa]{width:44px;height:44px;color:var(--color-text);border-radius:var(--radius);cursor:pointer;background:0 0;border:0;flex:0 0 44px;justify-content:center;align-items:center;padding:.5rem;display:inline-flex}.contact-copy[data-astro-cid-kgarxjsa][hidden]{display:none}.contact-copy[data-astro-cid-kgarxjsa]:hover{background:var(--btn-bg)}.contact-copy[data-astro-cid-kgarxjsa][aria-disabled=true]{cursor:wait}.contact-status[data-astro-cid-kgarxjsa]{color:var(--color-muted);font-size:.9rem}.contact-status[data-astro-cid-kgarxjsa]:empty{margin:0}@media print{.contact-copy[data-astro-cid-kgarxjsa],.contact-status[data-astro-cid-kgarxjsa]{display:none}}
 </style></head><body class="resource-shell"><script>
       // Set the initial phone layout before the header paints; no-JS keeps full navigation.
       document.body.toggleAttribute('data-nav-mobile', matchMedia('(max-width: 40rem)').matches);
@@ -154,7 +161,7 @@
           });
         }
       })();
-    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BeBZhmVR.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.DcrdnMru.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
   if (location.protocol === 'https:' && location.hostname === 'openpracticetests.org' && !document.querySelector('script[data-cf-beacon]')) {
     const beacon = document.createElement('script');
     beacon.type = 'module';
