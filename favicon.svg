@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="OPT favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FCFF"/>
+      <stop offset="1" stop-color="#E8F5FF"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#147DF5"/>
+      <stop offset="1" stop-color="#0B6FE8"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B356F"/>
+      <stop offset="1" stop-color="#072A5C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded square background, represented as a vector path -->
+  <path d="M178 72H846C904 72 952 120 952 178V846C952 904 904 952 846 952H178C120 952 72 904 72 846V178C72 120 120 72 178 72Z" fill="url(#bg)"/>
+
+  <!-- O -->
+  <path fill="url(#blue)" fill-rule="evenodd" d="
+    M299 446
+    C196 446 119 520 119 624
+    C119 728 196 802 299 802
+    C402 802 479 728 479 624
+    C479 520 402 446 299 446Z
+    M299 529
+    C245 529 204 568 204 624
+    C204 680 245 719 299 719
+    C353 719 394 680 394 624
+    C394 568 353 529 299 529Z"/>
+
+  <!-- P -->
+  <path fill="url(#navy)" fill-rule="evenodd" d="
+    M453 457H569
+    C669 457 728 505 728 584
+    C728 663 669 711 569 711H545V803H453V457Z
+    M545 536V632H566
+    C611 632 637 615 637 584
+    C637 553 611 536 566 536H545Z"/>
+
+  <!-- T -->
+  <path d="M704 457H905V547H850V803H758V547H704Z" fill="url(#navy)"/>
+
+  <!-- graduation-cap crown -->
+  <path d="M541 221L743 303L541 385L339 303L541 221Z" fill="url(#blue)"/>
+  <!-- cap lower band / book-like chevron -->
+  <path d="M407 347L541 391L675 347V432H594C571 432 553 441 541 458C529 441 511 432 488 432H407V347Z" fill="url(#navy)"/>
+</svg>
