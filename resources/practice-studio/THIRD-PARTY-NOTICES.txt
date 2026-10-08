@@ -1,0 +1,18 @@
+Practice Studio
+
+The MIT license in LICENSE applies to the tool's original code and documentation.
+It does not apply to imported PDFs, College Board questions, or other third-party
+materials. No College Board question bank or generated test is included in the
+public release package. SAT is a trademark of College Board. This independent
+tool is not affiliated with or endorsed by College Board.
+
+PDF.js 6.3.289 (https://github.com/mozilla/pdf.js)
+Copyright Mozilla Foundation and PDF.js contributors.
+License: Apache License, Version 2.0; see licenses/pdfjs-LICENSE.txt.
+The distributed builder embeds PDF.js and its worker implementation, with its
+upstream license comments retained. Practice Studio supplies a local integration
+for PDF text extraction and image rendering. Downloaded tests do not need PDF.js.
+
+Build and test dependencies are recorded in package-lock.json. They are not
+included as separate runtime libraries in the release. Their own licenses apply
+when installed. The public release uses system fonts, with no remote font assets.
