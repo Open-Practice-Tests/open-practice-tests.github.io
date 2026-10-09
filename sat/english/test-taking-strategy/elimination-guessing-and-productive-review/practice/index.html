@@ -68,9 +68,11 @@
       });
     });
 
-    document.addEventListener("click", function (e) {
+    function dismissOutside(e) {
       if (!nav.contains(e.target)) closeAll(null);
-    });
+    }
+    document.addEventListener("pointerdown", dismissOutside);
+    document.addEventListener("click", dismissOutside);
     document.addEventListener("keydown", function (e) {
       if (e.key !== "Escape") return;
       var open = menus.filter(function (m) {
@@ -84,8 +86,11 @@
     });
     nav.addEventListener("focusout", function (e) {
       var to = e.relatedTarget;
+      // Touch browsers may blur without naming the next focus target before a
+      // link activates. Outside clicks and Escape still dismiss the menus.
+      if (!to) return;
       menus.forEach(function (m) {
-        if (m.open && (!to || !m.contains(to))) m.open = false;
+        if (m.open && !m.contains(to)) m.open = false;
       });
     });
   })();
@@ -162,7 +167,7 @@
           });
         }
       })();
-    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.DcrdnMru.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.Btfojo4t.js"></script><!-- Cloudflare Web Analytics: keep local previews and exported files untracked. --><script type="module" id="cloudflare-web-analytics-loader">
   if (location.protocol === 'https:' && location.hostname === 'openpracticetests.org' && !document.querySelector('script[data-cf-beacon]')) {
     const beacon = document.createElement('script');
     beacon.type = 'module';
